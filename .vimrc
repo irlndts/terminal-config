@@ -2,9 +2,16 @@ call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go'
 Plug 'fatih/molokai'
+Plug 'majutsushi/tagbar'
+"" Plug 'Shougo/deoplete.nvim'
+"" Plug 'roxma/nvim-yarp'
+"" Plug 'roxma/vim-hug-neovim-rpc'
 call plug#end()
+
+"" deoplete
+"" let g:deoplete#enable_at_startup = 1
 
 "" vim-go
 let g:go_fmt_command = "goimports"
@@ -18,7 +25,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_extra_types = 1
-"" let g:go_auto_sameids = 1
+let g:go_auto_sameids = 1
 
 "" molokai
 let &t_Co=256
@@ -40,9 +47,11 @@ autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit'
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
+nmap <F8> :TagbarToggle<CR>
 
-" let g:go_auto_type_info = 1
-" set updatetime=100
+
+let g:go_auto_type_info = 1
+set updatetime=100
 
 
 syntax on
