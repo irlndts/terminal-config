@@ -14,12 +14,12 @@ call plug#end()
 "" let g:deoplete#enable_at_startup = 1
 
 "" vim-go
+let mapleader = ","
 let g:go_fmt_command = "goimports"
 let g:go_list_type = "quickfix"
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'megacheck']
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let mapleader = ","
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -56,12 +56,11 @@ set updatetime=100
 
 syntax on
 
+set number
 set autowrite
 set tabstop=4
 set shiftwidth=4
-""set softtabstop=8
 set smarttab
-""set et
 set wrap
 set autoindent
 set smartindent
