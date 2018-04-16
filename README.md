@@ -5,6 +5,8 @@ steps:
 ```
 brew install vim --with-python3
 
+brew install thefuck
+
 cp .vimrc ~/.vimrc
 cp .bash_profile ~/.bash_profile
 

@@ -28,6 +28,8 @@ gen_prompt() {
 
 PROMPT_COMMAND='gen_prompt'
 
+eval $(thefuck --alias)
+
 export GOPATH=~/go
 export PATH=$PATH:~/go/bin
 export EDITOR=vim
