@@ -5,6 +5,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoUpdateBinaries' }
 Plug 'fatih/molokai'
 Plug 'majutsushi/tagbar'
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 "" Plug 'Shougo/deoplete.nvim'
 "" Plug 'roxma/nvim-yarp'
 "" Plug 'roxma/vim-hug-neovim-rpc'
@@ -38,6 +39,8 @@ map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 nnoremap <leader>q :GoSameIds<CR>
 nnoremap <leader>w :GoSameIdsClear<CR>
+nnoremap <leader>d :GoDef<CR>
+nnoremap <leader>o :GoDoc<CR>
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
@@ -56,7 +59,7 @@ set updatetime=100
 
 syntax on
 
-set number
+"set number
 set autowrite
 set tabstop=4
 set shiftwidth=4
