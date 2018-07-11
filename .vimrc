@@ -25,8 +25,8 @@ let mapleader = ","
 let g:go_fmt_command = "goimports"
 let g:go_list_type = "quickfix"
 "" let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'megacheck']
-"" let g:go_metalinter_autosave = 1
-"" let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -40,6 +40,9 @@ let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+"" let b:ale_fixers = ['vet', 'golint']
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 
 " Enable integration with airline.
@@ -51,8 +54,8 @@ let g:rehash256 = 1
 let g:molokai_original = 1
 colorscheme molokai
 
-map <C-j> :cnext<CR>
-map <C-k> :cprevious<CR>
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 nnoremap <leader>q :GoSameIdsToggle<CR>
 "" nnoremap <leader>w :GoSameIdsClear<CR>
