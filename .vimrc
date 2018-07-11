@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/plugged')
-u
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
