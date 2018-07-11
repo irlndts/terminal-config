@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+u
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -12,6 +13,10 @@ Plug 'vim-airline/vim-airline'
 "" Plug 'roxma/nvim-yarp'
 "" Plug 'roxma/vim-hug-neovim-rpc'
 call plug#end()
+
+if has('python3')
+  silent! python3 1
+endif
 
 "" deoplete
 "" let g:deoplete#enable_at_startup = 1
