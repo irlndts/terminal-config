@@ -8,6 +8,7 @@ Plug 'majutsushi/tagbar'
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
+Plug 'ervandew/supertab'
 "" Plug 'Shougo/deoplete.nvim'
 "" Plug 'roxma/nvim-yarp'
 "" Plug 'roxma/vim-hug-neovim-rpc'
@@ -44,6 +45,8 @@ let g:ale_lint_on_enter = 0
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+"" omni completion
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " Enable integration with airline.
 let g:airline#extensions#ale#enabled = 1
