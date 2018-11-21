@@ -3,9 +3,10 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoUpdateBinaries' }
+"" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fatih/molokai'
 Plug 'majutsushi/tagbar'
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'ervandew/supertab'
@@ -24,6 +25,7 @@ endif
 "" vim-go
 let mapleader = ","
 let g:go_fmt_command = "goimports"
+let g:go_fmt_options = { 'gofmt': '-s', 'goimports': '-local github.com/topsteam'}
 let g:go_list_type = "quickfix"
 "" let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'megacheck']
 let g:go_metalinter_autosave = 1
@@ -76,8 +78,8 @@ autocmd FileType go nmap <Leader>i <Plug>(go-info)
 nmap <F8> :TagbarToggle<CR>
 
 
-let g:go_auto_type_info = 1
-set updatetime=100
+" let g:go_auto_type_info = 1
+" set updatetime=100
 
 
 syntax on
