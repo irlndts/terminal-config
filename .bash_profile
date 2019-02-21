@@ -31,6 +31,7 @@ PROMPT_COMMAND='gen_prompt'
 eval $(thefuck --alias)
 # remove all branches exclude master
 alias gbr="git branch | grep -v "master" | xargs git branch -D"
+alias hrms="cd ~/go/src/github.com/topsteam/hermes"
 
 export GOPATH=~/go
 export PATH=$PATH:~/go/bin
