@@ -1,35 +1,60 @@
 call plug#begin('~/.vim/plugged')
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'SirVer/ultisnips'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoUpdateBinaries' }
-"" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'fatih/molokai'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'tomasr/molokai'
 Plug 'majutsushi/tagbar'
-Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'w0rp/ale'
+Plug 'SirVer/ultisnips'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'ervandew/supertab'
-"" Plug 'Shougo/deoplete.nvim'
+Plug 'w0rp/ale'
+
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
+
+"" Plug 'ervandew/supertab'
+"" Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoUpdateBinaries' }
+"" Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
+
 "" Plug 'roxma/nvim-yarp'
 "" Plug 'roxma/vim-hug-neovim-rpc'
 call plug#end()
 
-if has('python3')
-  silent! python3 1
-endif
+"" if has('python3')
+""    silent! python3 1
+"" endif
 
-"" deoplete
-"" let g:deoplete#enable_at_startup = 1
+"" molokai
+let &t_Co=256
+let g:rehash256 = 1
+let g:molokai_original = 1
+colorscheme molokai
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-m>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+set encoding=utf-8
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+"" tagbar
+nmap <F8> :TagbarToggle<CR>
 
 "" vim-go
 let mapleader = ","
+
+" splitjoin
+nmap <Leader>j :SplitjoinJoin<cr>
+nmap <Leader>s :SplitjoinSplit<cr>
+
 let g:go_fmt_command = "goimports"
 let g:go_fmt_options = { 'gofmt': '-s', 'goimports': '-local github.com/topsteam'}
 let g:go_list_type = "quickfix"
 "" let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck', 'megacheck']
 let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_autosave_enabled = ['vet']
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -43,21 +68,13 @@ let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
-"" let b:ale_fixers = ['vet', 'golint']
+" let b:ale_fixers = ['vet', 'golint']
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-"" omni completion
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " Enable integration with airline.
 let g:airline#extensions#ale#enabled = 1
-
-"" molokai
-let &t_Co=256
-let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
 
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
@@ -70,12 +87,7 @@ autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
 autocmd FileType go nmap <Leader>c  <Plug>(go-coverage-toggle)
-autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
-nmap <F8> :TagbarToggle<CR>
 
 
 " let g:go_auto_type_info = 1
