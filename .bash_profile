@@ -33,6 +33,8 @@ eval $(thefuck --alias)
 alias gbr="git branch | grep -v "master" | xargs git branch -D"
 alias hrms="cd ~/go/src/github.com/topsteam/hermes"
 
+alias vim="/usr/local/bin/vim"
+
 export GOPATH=~/go
 export PATH=$PATH:~/go/bin
 export EDITOR=vim
@@ -42,6 +44,4 @@ export GREP_OPTIONS='--color=always'
 
 alias g="grep -iRn "
 
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-	. /usr/share/bash-completion/bash_completion
-fi
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

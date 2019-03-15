@@ -7,8 +7,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-
-"" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
+Plug 'tpope/vim-fugitive'
 
 "" Plug 'ervandew/supertab'
 
@@ -26,10 +25,6 @@ let g:rehash256 = 1
 let g:molokai_original = 1
 colorscheme molokai
 
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-m>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
 set encoding=utf-8
 
 " better key bindings for UltiSnipsExpandTrigger
