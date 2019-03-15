@@ -1,22 +1,20 @@
 call plug#begin('~/.vim/plugged')
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoUpdateBinaries' }
 Plug 'tomasr/molokai'
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
+"" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --go-completer' }
 
 "" Plug 'ervandew/supertab'
-"" Plug 'fatih/vim-go', { 'tag': '*', 'do': ':GoUpdateBinaries' }
-"" Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
-
-"" Plug 'roxma/nvim-yarp'
-"" Plug 'roxma/vim-hug-neovim-rpc'
 call plug#end()
+
+filetype plugin on
 
 "" if has('python3')
 ""    silent! python3 1
