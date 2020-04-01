@@ -15,3 +15,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 vim -c ':PlugInstall' -c ':q' -c ':q'
 ```
+
+remove all merged branches in git
+
+`git branch --merged | grep -v \* | xargs git branch -D`
